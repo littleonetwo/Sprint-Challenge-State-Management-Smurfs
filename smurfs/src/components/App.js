@@ -1,16 +1,23 @@
 import React, { Component } from "react";
 import "./App.css";
-class App extends Component {
-  render() {
+
+import { connect } from 'react-redux';
+
+import CollectSmurfs from './collectSmurfs.js';
+import AddSmurfs from './addSmurf.js';
+
+function App() {
+
     return (
       <div className="App">
-        <h1>SMURFS! 2.0 W/ Redux</h1>
-        <div>Welcome to your state management version of Smurfs!</div>
-        <div>Start inside of your `src/index.js` file!</div>
-        <div>Have fun!</div>
+        <h1>SMURFS! 2.0</h1>
+        <div>If you would like to see your current Smurfs click get smurfs</div>
+        <CollectSmurfs />
+        <AddSmurfs />
       </div>
     );
-  }
+
 }
 
-export default App;
+export default connect((state) =>{
+  return {state}})(App);
